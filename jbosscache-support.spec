@@ -1,4 +1,4 @@
-%_javapackages_macros
+%{?_javapackages_macros:%_javapackages_macros}
 Name:    jbosscache-support
 Version: 1.6
 Release: 7.0%{?dist}
@@ -90,3 +90,30 @@ install -m 644 xslt/pom.xml \
 %doc README-Maven.txt
 %{_javadir}/%{name}-xslt.jar
 %{_mavenpomdir}/JPP-%{name}-xslt.pom
+
+%changelog
+* Sun Aug 11 2013 Matt Spaulding <mspaulding06@gmail.com> - 1.6-7
+- Add BR for maven-install-plugin
+
+* Sat Aug 03 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.6-6
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
+
+* Sat Mar 02 2013 Matt Spaulding <mspaulding06@gmail.com> - 1.6-5
+- Removed wagon-webdav dependency from pom.xml
+
+* Thu Feb 14 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.6-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
+
+* Wed Feb 06 2013 Java SIG <java-devel@lists.fedoraproject.org> - 1.6-3
+- Update for https://fedoraproject.org/wiki/Fedora_19_Maven_Rebuild
+- Replace maven BuildRequires with maven-local
+
+* Fri Aug 03 2012 Matt Spaulding <mspaulding06@gmail.com> - 1.6-2
+- Removed define from file (was not being used)
+- Fixed incorrect license type
+- Renamed jbosscache-support-parent subpackage to jbosscache-common-parent to reflect artifactid
+- Renamed pom files for parent subpackage name change
+
+* Tue Jul 31 2012 Matt Spaulding <mspaulding06@gmail.com> - 1.6-1
+- Initial package
+
