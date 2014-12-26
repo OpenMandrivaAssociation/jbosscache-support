@@ -1,10 +1,9 @@
 %{?_javapackages_macros:%_javapackages_macros}
 Name:    jbosscache-support
 Version: 1.6
-Release: 7.0%{?dist}
+Release: 9.1
 Summary: JBossCache support package
-
-
+Group:	 Development/Java
 License: LGPL
 URL:     http://www.jboss.org/jbosscache
 # svn export http://anonsvn.jboss.org/repos/jbosscache/support/tags/1.6 jbosscache-support-1.6
@@ -58,7 +57,7 @@ find . -name \*.jar -exec rm -f {} \;
 
 %build
 # Does not include javadocs or tests
-mvn-rpmbuild install -Dmaven.test.skip=true
+%mvn_build -f
 
 %install
 install -d -m 755 $RPM_BUILD_ROOT%{_javadir}
@@ -80,7 +79,7 @@ install -m 644 xslt/pom.xml \
 %files
 %doc README-Maven.txt
 %{_mavenpomdir}/JPP-%{name}.pom
-%{_mavendepmapfragdir}/%{name}
+%{_datadir}/maven-metadata/%{name}.xml
 
 %files -n jbosscache-common-parent
 %doc README-Maven.txt
@@ -92,6 +91,12 @@ install -m 644 xslt/pom.xml \
 %{_mavenpomdir}/JPP-%{name}-xslt.pom
 
 %changelog
+* Sun Jun 08 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 1.6-9
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
+
+* Fri Mar 28 2014 Michael Simacek <msimacek@redhat.com> - 1.6-8
+- Use Requires: java-headless rebuild (#1067528)
+
 * Sun Aug 11 2013 Matt Spaulding <mspaulding06@gmail.com> - 1.6-7
 - Add BR for maven-install-plugin
 
