@@ -1,7 +1,7 @@
 %{?_javapackages_macros:%_javapackages_macros}
 Name:    jbosscache-support
 Version: 1.6
-Release: 9.3
+Release: 9.4
 Summary: JBossCache support package
 Group:	 Development/Java
 License: LGPL
