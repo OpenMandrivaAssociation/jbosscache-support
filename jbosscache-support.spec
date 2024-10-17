@@ -5,7 +5,7 @@ Release: 9.4
 Summary: JBossCache support package
 Group:	 Development/Java
 License: LGPL
-URL:     http://www.jboss.org/jbosscache
+URL:     https://www.jboss.org/jbosscache
 # svn export http://anonsvn.jboss.org/repos/jbosscache/support/tags/1.6 jbosscache-support-1.6
 # tar cJf jbosscache-support-1.6.tar.xz jbosscache-support-1.6
 Source0: %{name}-%{version}.tar.xz
